@@ -21,30 +21,32 @@ class LoadMore extends React.Component {
     }
     loadMoreHandle() {
         // 执行传输过来的
-        this.props.loadMoreFn();
+        this.props.handlerLoadMore();
     }
+
     componentDidMount() {
-        // 使用滚动时自动加载更多
-        const loadMoreFn = this.props.loadMoreFn
-        const wrapper = this.refs.wrapper
+
         let timeoutId
-        function callback() {
-            const top = wrapper.getBoundingClientRect().top
+        const wrapper = this.refs.wrapper;
+        let loadMoreHandle = this.props.handlerLoadMore
+        function callback () {
             const windowHeight = window.screen.height
-            if (top && top < windowHeight) {
-                // 证明 wrapper 已经被滚动到暴露在页面可视范围之内了
-                loadMoreFn()
+            const top = wrapper.getBoundingClientRect().top
+            if(top && top < windowHeight){
+                loadMoreHandle()
             }
         }
-        window.addEventListener('scroll', function () {
-            if (this.props.isLoadingMore) {
+
+        window.addEventListener('scroll',function(){
+            if(this.props.isLoadingMore){
                 return
             }
-            if (timeoutId) {
+            if(timeoutId){
                 clearTimeout(timeoutId)
             }
-            timeoutId = setTimeout(callback, 50)
-        }.bind(this), false);
+            setTimeout(callback,50)
+        }.bind(this),false)
+
     }
 }
 

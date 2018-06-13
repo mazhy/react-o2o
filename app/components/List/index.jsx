@@ -11,6 +11,7 @@ class List extends React.Component {
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
     render() {
+
         return (
             <div className="list-container">
                 {this.props.data.map((item, index) => {
