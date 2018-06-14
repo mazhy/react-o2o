@@ -1,6 +1,6 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-
+import LazyLoad from 'react-lazyload';
 import './style.less'
 
 class ListItem extends React.Component {
@@ -13,7 +13,9 @@ class ListItem extends React.Component {
         return (
             <div className="list-item clear-fix">
                 <div className="item-img-container float-left">
-                    <img src={data.img} alt={data.title}/>
+                    <LazyLoad height={90}>
+                        <img src={data.img} alt={data.title} className="item-img"/>
+                    </LazyLoad>
                 </div>
                 <div className="item-content">
                     <div className="item-title-container clear-fix">
@@ -24,7 +26,8 @@ class ListItem extends React.Component {
                         {data.subTitle}
                     </p>
                     <div className="item-price-container clear-fix">
-                        <span className="price float-left">￥{data.price}</span>
+                        <span className="price float-left">{data.price}</span>
+                        <span className="old_price float-left">{data.old_price}</span>
                         <span className="mumber float-right">已售{data.mumber}</span>
                     </div>
                 </div>

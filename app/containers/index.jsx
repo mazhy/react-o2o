@@ -7,7 +7,6 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as userInfoActionsFormOtherFile from '../actions/userinfo'
 
-
 class App extends React.Component {
     constructor(props, context) {
         super(props, context);
@@ -25,7 +24,7 @@ class App extends React.Component {
                 {
                     this.state.initDone
                     ? this.props.children
-                    : <div>loading ...</div>
+                    : ''
                 }
             </div>
         )

@@ -19,7 +19,7 @@ class List extends React.Component {
     render() {
         return (
             <div>
-                <h2 className="home-list-title">猜你喜欢</h2>
+                <div className="home-list-title">猜你喜欢</div>
                 <ListComponent data={this.state.data}/>
                 <LoadMore handlerLoadMore={this.handlerLoadMore.bind(this)} isLoadingMore={this.state.isLoadingMore}/>
             </div>
