@@ -14,6 +14,7 @@ import NotFound from '../containers/404'
 
 class RouterMap extends React.Component {
     render() {
+        console.log(this.props.history)
         return (
             <Router history={this.props.history}>
                 <Route path='/' component={App}>

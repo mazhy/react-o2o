@@ -1,6 +1,5 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import Home from '../containers/Home'
 import LocalStore from '../util/localStore'
 import {CITYNAME} from '../config/localStoreKey'
 import { connect } from 'react-redux'
@@ -18,13 +17,9 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Home/>
                 {/*这个文件相当于所有文件的父组件,然后根据路由配置规则 渲染子组件*/}
-
                 {
-                    this.state.initDone
-                    ? this.props.children
-                    : ''
+                    this.props.children
                 }
             </div>
         )
