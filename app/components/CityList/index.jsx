@@ -41,60 +41,68 @@ class CityList extends React.Component {
     render() {
         const hotCity = this.state.hotCity
         return (
-            <div>
-                <div className="city-list-container">
-                    <h3>热门城市</h3>
-                    <ul className="clear-fix">
+            <div id="top">
+                <div>
+                    <div className="city-list-container">
+                        <h3>热门城市</h3>
+                        <ul className="clear-fix">
+                            {
+                                hotCity.map((item,index) => {
+                                    let cityName = item.cityName
+                                    return (
+                                        <li key={index}>
+                                            <span value={item.cityName} onClick={this.clickHandle.bind(this,`${cityName}`)}>{item.cityName}</span>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>
+                    </div>
+                    <div className="citys">
+                        <div className="hot-trade modebox">
+                            <div className="hd">更多城市</div>
+                            <div className="home-place-list letter-list">
+                                <ul>
+                                    {this.state.letters.map((item,index)=>{
+                                        return (
+                                            <li key={index}>
+                                                <a onClick={()=>this._handleClickScroll({item})}>{item}</a>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            </div>
+                        </div>
                         {
-                            hotCity.map((item,index) => {
-                                let cityName = item.cityName
+                            this.state.cityList.map((item,index) => {
+                                const citys = item.list
                                 return (
-                                    <li key={index}>
-                                        <span value={item.cityName} onClick={this.clickHandle.bind(this,`${cityName}`)}>{item.cityName}</span>
-                                    </li>
+                                    <div id={`${item.initial}`} className="hot-trade modebox" key={index}>
+                                        <div className="hd">{item.initial}</div>
+                                        <div className="home-place-list">
+                                            <ul className="citylist">
+                                                {citys.map((ele,index) => {
+                                                    return (
+                                                        <li key={index}>
+                                                            <a onClick={this.clickHandle.bind(this,`${ele.name}`)}>{ele.name}</a>
+                                                        </li>
+                                                    )
+                                                })}
+                                            </ul>
+                                        </div>
+                                    </div>
                                 )
                             })
                         }
-                    </ul>
-                </div>
-                <div className="citys">
-                    <div className="hot-trade modebox">
-                        <div className="hd">更多城市</div>
-                        <div className="home-place-list letter-list">
-                            <ul>
-                                {this.state.letters.map((item,index)=>{
-                                    return (
-                                        <li key={index}>
-                                            <a onClick={()=>this._handlerClickScroll({item})}>{item}</a>
-                                        </li>
-                                    )
-                                })}
-                            </ul>
-                        </div>
                     </div>
-                    {
-                        this.state.cityList.map((item,index) => {
-                            const citys = item.list
-                            return (
-                                <div id={`${item.initial}`} className="hot-trade modebox" key={index}>
-                                    <div className="hd">{item.initial}</div>
-                                    <div className="home-place-list">
-                                        <ul className="citylist">
-                                            {citys.map((ele,index) => {
-                                                return (
-                                                    <li key={index}>
-                                                        <a onClick={this.clickHandle.bind(this,`${ele.name}`)}>{ele.name}</a>
-                                                    </li>
-                                                )
-                                            })}
-                                        </ul>
-                                    </div>
-                                </div>
-                            )
-                        })
-                    }
+                </div>
+                <div className="backTop">
+                    <span onClick={() => this._handleScrollIntoView('common-header')}>
+                        <img src="back/backtop.png" alt="" width="30px"/>
+                    </span>
                 </div>
             </div>
+
         )
     }
 
@@ -102,11 +110,16 @@ class CityList extends React.Component {
         this.props.changeCityFn(cityName)
     }
 
+    _handleClickScroll(item){
+        if(item){
+            this._handleScrollIntoView(item.item)
+        }
+    }
 
-    _handlerClickScroll(id){
+    _handleScrollIntoView(id){
         if (id) {
             // 找到锚点
-            let anchorElement = document.getElementById(id.item);
+            let anchorElement = document.getElementById(id);
             // 如果对应id的锚点存在，就跳转到锚点
             if(anchorElement) {
                 //带滑动效果

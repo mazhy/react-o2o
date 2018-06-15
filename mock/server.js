@@ -56,6 +56,11 @@ router.get('/api/city/cityList', function *(next){
     this.body = cityList
 })
 
+//获取category的列表 轮播图
+var categoryList= require('./category/category.js')
+router.get('/api/category/categoryList', function *(next){
+    this.body = categoryList
+})
 
 // 开始服务并生成路由
 app.use(router.routes())

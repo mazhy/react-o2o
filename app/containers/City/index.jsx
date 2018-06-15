@@ -9,7 +9,7 @@ import { bindActionCreators } from 'redux'
 import LocalStore from '../../util/localStore'
 import {CITYNAME} from '../../config/localStoreKey'
 import {hashHistory} from 'react-router'
-
+import CityBottom from '../../components/CityBottom'
 
 
 class City extends React.Component {
@@ -23,6 +23,7 @@ class City extends React.Component {
                 <Header title='选择城市'></Header>
                 <CurrentCity cityName={this.props.userinfo.cityName}/>
                 <CityList changeCityFn={this.changeCity.bind(this)}/>
+                <CityBottom />
             </div>
         )
     }
