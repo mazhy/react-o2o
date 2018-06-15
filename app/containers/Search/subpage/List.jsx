@@ -31,7 +31,7 @@ class SearchList extends React.Component {
                 }
                 {
                     this.state.hasMore
-                    ? <LoadMore isLoadingMore={this.state.isLoadingMore} loadMoreFn={this.loadMoreData.bind(this)}/>
+                    ? <LoadMore isLoadingMore={this.state.isLoadingMore} handlerLoadMore={this.loadMoreData.bind(this)}/>
                     : ''
                 }
             </div>

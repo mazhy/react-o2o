@@ -44,6 +44,16 @@ router.get('/api/search/:page/:city/:category/:keyword', function *(next) {
     console.log('关键字：' + paramsKeyword)
 
     this.body = searchListData
+});
+//获取热点城市
+var hotCity = require('./city/hotCity.js')
+router.get('/api/city/hotCity', function *(next){
+    this.body = hotCity
+})
+//获取所有城市
+var cityList = require('./city/cityList.js')
+router.get('/api/city/cityList', function *(next){
+    this.body = cityList
 })
 
 
