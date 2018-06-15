@@ -36,7 +36,7 @@ class Category extends React.Component {
                 this.setState({index})
             }.bind(this)
         }
-        // 这个做法很恶心,但是无可奈何,个人能力有限
+        // 这个做法很恶心,但是无可奈何,个人能力有限,就先这样吧
         let {listA,listB,listC} = this.state.categoryList
         return (
             <div id="home-category">
