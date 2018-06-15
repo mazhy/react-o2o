@@ -20,8 +20,10 @@ class HomeHeader extends React.Component {
                     </Link>
                 </div>
                 <div className="home-header-right float-right">
-                    {/*画一个个人图标*/}
-                    <div className="selfOutline"></div>
+                    <Link to="/Login">
+                        {/*画一个个人图标*/}
+                        <div className="selfOutline"></div>
+                    </Link>
                     {/*<i className="icon-user"></i>*/}
                 </div>
                 <div className="home-header-middle">

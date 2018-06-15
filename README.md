@@ -1,3 +1,3 @@
-# react-simple-o2o-demo
+# react-o2o
 
-首页，文档参见[这里](./docs/README.md)
+	react,redux,react-router,mockjs,仿大众点评

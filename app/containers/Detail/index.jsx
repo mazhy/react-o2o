@@ -1,5 +1,8 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
+import Header from '../../components/Header'
+import Info from './subpage/Info'
+import Comment from './subpage/Comment'
 
 class Detail extends React.Component {
     constructor(props, context) {
@@ -9,12 +12,12 @@ class Detail extends React.Component {
     render() {
         return (
             <div>
-                <h1>Detail</h1>
+                <Header title="商铺详情"/>
+                <Info id={this.props.params.id}/>
+                <Comment id={this.props.params.id}/>
             </div>
         )
     }
 }
 
-// 使用 require.ensure 异步加载，还不支持 ES6 的 export 
-// export default Detail
-module.exports = Detail
+export default Detail

@@ -8,7 +8,8 @@ module.exports = {
             price: '150',
             old_price: '999',
             distance: '120m',
-            mumber: '389'
+            mumber: '389',
+            id: Math.random().toString().slice(2)
         },
         {
             img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161022145750123-1745839503.jpg',
@@ -17,7 +18,8 @@ module.exports = {
             price: '113',
             old_price: '999',
             distance: '140m',
-            mumber: '689'
+            mumber: '689',
+            id: Math.random().toString().slice(2)
         },
         {
             img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161022145755545-1770557408.jpg',
@@ -26,7 +28,8 @@ module.exports = {
             price: '92',
             old_price: '999',
             distance: '160',
-            mumber: '106'
+            mumber: '106',
+            id: Math.random().toString().slice(2)
         },
         {
             img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161022145800732-576947550.jpg',
@@ -35,7 +38,8 @@ module.exports = {
             price: '90',
             old_price: '999',
             distance: '160',
-            mumber: '58'
+            mumber: '58',
+            id: Math.random().toString().slice(2)
         },
         {
             img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161022145806201-1193851669.jpg',
@@ -44,7 +48,8 @@ module.exports = {
             price: '85',
             old_price: '999',
             distance: '160',
-            mumber: '1426'
+            mumber: '1426',
+            id: Math.random().toString().slice(2)
         },
         {
             img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161022150855185-1659375763.jpg',
@@ -53,7 +58,8 @@ module.exports = {
             price: '113',
             old_price: '999',
             distance: '140m',
-            mumber: '689'
+            mumber: '689',
+            id: Math.random().toString().slice(2)
         },
         {
             img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161022145800732-576947550.jpg',
@@ -62,7 +68,8 @@ module.exports = {
             price: '90',
             old_price: '999',
             distance: '160',
-            mumber: '58'
+            mumber: '58',
+            id: Math.random().toString().slice(2)
         }
     ]
 }

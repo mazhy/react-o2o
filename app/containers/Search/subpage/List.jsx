@@ -47,7 +47,6 @@ class SearchList extends React.Component {
         const keyword = this.props.keyword || ''
         const category = this.props.category
         const result = getSearchData(0, cityName, category, keyword)
-        console.log(cityName, category, keyword)
         this.resultHandle(result)
     }
     // 加载更多数据
@@ -82,7 +81,7 @@ class SearchList extends React.Component {
         }).then(json => {
             const hasMore = json.hasMore
             const data = json.data
-
+            console.log(data)
             this.setState({
                 hasMore: hasMore,
                 // 注意，这里讲最新获取的数据，拼接到原数据之后，使用 concat 函数
