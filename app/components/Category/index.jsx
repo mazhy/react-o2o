@@ -23,9 +23,9 @@ class Category extends React.Component {
             return data
         }).then(json =>{
             let categoryList= json.data
-            this.setState({
-                categoryList
-            })
+                this.setState({
+                    categoryList
+                })
         })
     }
 

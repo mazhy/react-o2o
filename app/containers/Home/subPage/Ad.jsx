@@ -25,6 +25,7 @@ class Ad extends React.Component {
 
 
     componentDidMount() {
+        //为了防止,组件还没有加载完就执行setState::setState(...): Can only update a mounted or mounting component...
         const result = getAdData();
         result.then(res =>{
             return res.json()
@@ -48,6 +49,8 @@ class Ad extends React.Component {
         })
 
     }
+
+
 }
 
 export default Ad

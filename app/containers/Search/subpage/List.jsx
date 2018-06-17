@@ -53,6 +53,7 @@ class SearchList extends React.Component {
     loadMoreData() {
         // 记录状态
         this.setState({
+
             isLoadingMore: true
         })
 
@@ -81,7 +82,6 @@ class SearchList extends React.Component {
         }).then(json => {
             const hasMore = json.hasMore
             const data = json.data
-            console.log(data)
             this.setState({
                 hasMore: hasMore,
                 // 注意，这里讲最新获取的数据，拼接到原数据之后，使用 concat 函数
@@ -89,7 +89,7 @@ class SearchList extends React.Component {
             })
         }).catch(ex => {
             if (__DEV__) {
-                console.error('搜索页获取数据报错, ', ex.message)
+                console.error('搜索页获取数据报错了, ', ex.message)
             }
         })
     }
@@ -102,7 +102,6 @@ class SearchList extends React.Component {
         if (keyword === prevProps.keyword && category === prevProps.category) {
             return
         }
-
         // 重置 state
         this.setState(initialState)
 
@@ -111,7 +110,7 @@ class SearchList extends React.Component {
     }
 }
 
-// -------------------redux react 绑定--------------------
+// -------------------redux react 绑定 --------------------
 
 function mapStateToProps(state) {
     return {

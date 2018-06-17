@@ -12,7 +12,6 @@ class Search extends React.Component {
     }
     render() {
         let param = this.props.params
-        console.log(param.type)
         return (
             <div>
                 <SearchHeader keyword={param.keyword}/>

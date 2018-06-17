@@ -12,7 +12,6 @@ class CategoryItem extends React.Component {
     }
     render() {
         const {item} = this.props
-        console.log(item)
         return (
             <Link to={item.search}>
                 <li className="float-left">

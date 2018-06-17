@@ -31,10 +31,11 @@ class List extends React.Component {
     }
 
     handlerLoadMore() {
-        this.setState({
-            isLoadingMore: true,
-            page: this.state.page +1,
-        })
+            this.setState({
+                isLoadingMore: true,
+                page: this.state.page +1,
+            })
+
 
         let {cityName} = this.props
         let result = getListData(cityName,this.state.page);
@@ -54,13 +55,14 @@ class List extends React.Component {
         }).then(json => {
             let data = json.data;
             let loadMore = json.loadMore;
-            this.setState({
-                data:this.state.data.concat(data),
-                loadMore,
-                isLoadingMore: false,
-            })
+                this.setState({
+                    data: this.state.data.concat(data),
+                    loadMore,
+                    isLoadingMore: false,
+                })
         })
     }
+
 }
 
 export default List
