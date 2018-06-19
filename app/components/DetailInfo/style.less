@@ -1,6 +1,46 @@
 #detail-info-container {
     background-color: #fff;
-    padding: 10px;
+
+    .info-name {
+        margin: 0;
+        border-bottom: 1px solid #ddd8ce;
+        font-size: inherit;
+        height: 50px;
+        .info-poi-brand{
+            margin: 5px 10px 5px 10px;
+            color: #333;
+            font-size: 16px;
+            font-weight: 600;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+    .avg-price {
+        font-size: 14px;
+        color: #999;
+        margin-left: 10px;
+    }
+    .address {
+        .poi-address{
+            margin-left: 10px;
+            //vertical-align: middle;
+            height:50px;
+            line-height: 50px;
+        }
+    }
+    .info-poi-score{
+        margin-bottom: 5px;
+        .score{
+            display: inline-block;
+            font-size: 12px;
+            .stars {
+                margin-left: 10px;
+                display: inline-block;
+                color: #fa952f;
+            }
+        };
+    }
 
     .info-container {
         border-bottom: 1px solid #f1f1f1;
@@ -38,4 +78,25 @@
         color: #999;
         line-height: 1.5;
     }
+
+    .store{
+        width: 40px;
+        height: 40px;
+        left: 10px;
+        top:60px;
+        position: absolute;
+        background: url(//jci.xiaozhustatic1.com/e18053101/images/ico_sprite.png) no-repeat 0 -725px;
+        cursor: default;
+    }
+    .unStore{
+        width: 40px;
+        height: 40px;
+        left: 10px;
+        top:60px;
+        position: absolute;
+        background: url(//jci.xiaozhustatic1.com/e18053101/images/ico_sprite.png) no-repeat 0 -681px;
+        cursor: default;
+    }
 }
+
+

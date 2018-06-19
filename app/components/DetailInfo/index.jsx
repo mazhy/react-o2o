@@ -7,30 +7,45 @@ class DetailInfo extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+
     }
     render() {
         // 获取数据
         const data = this.props.data
         return (
             <div id="detail-info-container">
-                <div className="info-container clear-fix">
-                    <div className="info-img-container float-left">
-                        <img src={data.img}/>
+                <div>
+                    <div className="detail-info-top-img">
+                        {
+                            this.props.data.store
+                            ?<div className="store" onClick={this.handleClickStore.bind(this)}></div>
+                            :<div className="unStore" onClick={this.handleClickStore.bind(this)}></div>
+                        }
+                        <img src={data.img} alt="" width={'100%'}/>
                     </div>
-                    <div className="info-content">
-                        <h1>{data.title}</h1>
-                        <div className="star-container">
-                            {/* 引用 Star 组件 */}
-                            <Star star={data.star}/>
-                            <span className="price">￥{data.price}</span>
+                    <div className="info-name" >
+                        <p className="info-poi-brand">{data.title}</p>
+                        <div className="info-poi-score">
+                            <span className="score">
+                                <span className="stars" >
+                                    <Star star={data.star}/>
+                                </span>
+                            </span>
+                            <span className="avg-price" >
+                                人均：¥{data.price}
+                            </span>
                         </div>
-                        <p className="sub-title">{data.subTitle}</p>
+                    </div>
+                    <div className="address">
+                        <div className="poi-address">{data.address}</div>
                     </div>
                 </div>
-                {/* 设置 innerHTML */}
-                <p dangerouslySetInnerHTML={{__html: data.desc}} className="info-desc"></p>
             </div>
         )
+    }
+
+    handleClickStore(){
+        this.props.handleClickStore()
     }
 }
 

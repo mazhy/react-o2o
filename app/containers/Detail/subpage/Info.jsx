@@ -9,7 +9,7 @@ class Info extends React.Component {
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
         this.state = {
             status : false,
-            info:{}
+            info:{},
         }
     }
 
@@ -33,12 +33,23 @@ class Info extends React.Component {
             <div>
                 {
                     this.state.status
-                        ? <DetailInfo data={this.state.info}/>
+                        ? <DetailInfo data={this.state.info} handleClickStore={this.handleClickStore.bind(this)}/>
                         : ''
                 }
             </div>
         )
     }
+
+    handleClickStore(){
+        //修改收藏状态,应该发请求,懒得弄了
+        let info = Object.assign({},this.state.info)
+        const store = !this.state.info.store
+        info.store = store
+        this.setState({
+            info : info,
+        })
+    }
+
 }
 
 export default Info

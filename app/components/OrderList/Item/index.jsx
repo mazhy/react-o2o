@@ -48,9 +48,9 @@ class Item extends React.Component {
                     this.state.commentState === 1
                         ? <div className="comment-text-container">
                             <textarea style={{width: '100%', height: '80px'}} className="comment-text" ref="commentText"></textarea>
-                            <div style={{paddingTop: '10px', paddingBottom: '10px'}}>
-                                <Star star="0" clickCallback={this.starClickCallback.bind(this)}/>
-                            </div>
+                            {/*<div style={{paddingTop: '10px', paddingBottom: '10px'}}>*/}
+                                {/*<Star star="0" clickCallback={this.starClickCallback.bind(this)}/>*/}
+                            {/*</div>*/}
                             <button className="btn" onClick={this.submitComment.bind(this)}>提交</button>
                             &nbsp;
                             <button className="btn unseleted-btn" onClick={this.hideComment.bind(this)}>取消</button>

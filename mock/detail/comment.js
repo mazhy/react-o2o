@@ -1,5 +1,16 @@
 module.exports = {
     hasMore: true,
+    cloudTag :[
+        {title:'服务热情', num: 12},
+        {title:'菜品不错', num: 8},
+        {title:'回头客', num: 6},
+        {title:'性价比高', num: 6},
+        {title:'上菜快', num: 5},
+        {title:'味道赞', num: 5},
+        {title:'价格实惠', num: 5},
+        {title:'坏境优雅', num: 5},
+        {title:'干净卫生', num: 4}
+    ],
     data: [
         {
             username: '133****3355',
