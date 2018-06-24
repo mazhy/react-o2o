@@ -1,10 +1,11 @@
 import {call, put} from 'redux-saga/effects'
 import {UPDATE_HOME_AD_DATA} from  '../../constants/home'
-import axios from 'axios'
+import { getAdData } from '../../fetch/home/home'
+
+
 
 export function* getHomeAdData() {
-
-    let data = yield call(axios.get,'/api/homead')
+    let data = yield call(getAdData)
     data = data.data
     let dataArr = []
     if(data.length) {

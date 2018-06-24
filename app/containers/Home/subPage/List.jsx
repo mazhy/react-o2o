@@ -21,7 +21,8 @@ class List extends React.Component {
             <div>
                 <div className="home-list-title">猜你喜欢</div>
                 <ListComponent data={this.state.data}/>
-                <LoadMore handlerLoadMore={this.handlerLoadMore.bind(this)} isLoadingMore={this.state.isLoadingMore}/>
+                <LoadMore handlerLoadMore={this.handlerLoadMore.bind(this)}
+                          isLoadingMore={this.state.isLoadingMore}/>
             </div>
         )
     }

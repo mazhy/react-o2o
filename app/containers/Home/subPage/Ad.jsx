@@ -8,8 +8,6 @@ class Ad extends React.Component {
         super(props, context);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
-
-
     render() {
         return (
             <div>
