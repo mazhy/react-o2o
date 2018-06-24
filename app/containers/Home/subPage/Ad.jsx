@@ -7,50 +7,20 @@ class Ad extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
-        this.state = {
-            data : [],
-        }
     }
+
+
     render() {
         return (
             <div>
                 {
-                    this.state.data.length
-                        ?<HomeAd data={this.state.data}/>
+                    this.props.data.length
+                        ?<HomeAd data={this.props.data}/>
                         : <div>loading</div>
                 }
             </div>
         )
     }
-
-
-    componentDidMount() {
-        //为了防止,组件还没有加载完就执行setState::setState(...): Can only update a mounted or mounting component...
-        const result = getAdData();
-        result.then(res =>{
-            return res.json()
-        }).then(json => {
-            const data = json
-            if(data.length) {
-                //随机取三个
-                let returnData = []
-                let indexArr= []
-                while(returnData.length < 3 ){
-                    var index = Math.floor((Math.random() * data.length));
-                    if(indexArr.indexOf(index) < 0){
-                        returnData.push(data[index])
-                        indexArr.push(index)
-                    }else{
-                        continue
-                    }
-                }
-                this.setState({data:returnData})
-            }
-        })
-
-    }
-
-
 }
 
 export default Ad

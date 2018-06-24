@@ -2,15 +2,20 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { hashHistory } from 'react-router'
-import configureStore from './store/configureStore'
-
+import {createStore, applyMiddleware} from 'redux'
 import './static/css/common.less'
 import './static/css/font.css'
-
-// 创建 Redux 的 store 对象
-const store = configureStore()
-
+import createSagaMiddleware from 'redux-saga'
 import RouteMap from './router/routeMap'
+import  rootSaga  from './effects/rootSagas'
+import rootReducer from "./reducers";
+
+const sagaMiddleware = createSagaMiddleware();
+const middlewares = [ sagaMiddleware];
+
+const store = createStore(rootReducer, applyMiddleware(...middlewares));
+sagaMiddleware.run(rootSaga);
+
 
 render(
     <Provider store={store}>

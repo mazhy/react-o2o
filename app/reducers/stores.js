@@ -10,7 +10,6 @@ export default function stores (state = initialState, action){
             state.unshift(action.data)
             return state
         case actionTypes.STORE_RM:
-            console.log(state)
             return state.filter(item => {
                 if(item.id !== action.data.id){
                     return item

@@ -5,6 +5,10 @@ import Category from '../../components/Category'
 import {connect} from 'react-redux'
 import HomeAd from './subPage/Ad'
 import List from './subPage/List'
+import {HOME_AD_DATA } from '../../constants/home'
+import {bindActionCreators} from 'redux'
+import {getHomeAdData} from '../../actions/home'
+
 
 class Home extends React.Component {
     constructor(props, context) {
@@ -20,21 +24,28 @@ class Home extends React.Component {
                 <HomeHeader cityName={this.props.userinfo.cityName}/>
                 <Category/>
                 <div style={{height:'15px', width:'100%'}}></div>
-                <HomeAd/>
+                <HomeAd data={this.props.home}/>
                 <List cityName={this.props.userinfo.cityName}/>
             </div>
         )
+    }
+
+    componentDidMount(){
+        this.props.getHome()
     }
 }
 
 function mapStateToProps(state){
     return {
-        userinfo : state.userinfo
+        userinfo : state.userinfo,
+        home : state.home
     }
 }
 
 function mapDispatchToProps(dispatch) {
-    return {}
+    return {
+        getHome: bindActionCreators(getHomeAdData, dispatch)
+    }
 }
 
 export default connect(

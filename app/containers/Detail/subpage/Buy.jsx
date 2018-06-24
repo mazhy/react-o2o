@@ -73,7 +73,6 @@ class Buy extends React.Component {
             //为true 就是要执行取消收藏
             storeActions.rm({id:id})
         }else{
-            console.log(id)
             storeActions.add({id:id})
         }
 

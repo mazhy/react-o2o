@@ -1,0 +1,2 @@
+export const HOME_AD_DATA = 'HOME_AD_DATA'
+export const UPDATE_HOME_AD_DATA = 'UPDATE_HOME_AD_DATA'
